@@ -1,0 +1,6 @@
+.key-button{
+  border-radius: 5px;
+  background: #c0c0c0;
+  box-shadow:  -5px -5px 14px #a1a1a1,
+             5px 5px 14px #dfdfdf;
+}
