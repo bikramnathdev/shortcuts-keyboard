@@ -1,7 +1,8 @@
 import './App.css'
 import React , {useEffect, useRef} from 'react';
+import FirstRow from './components/FirstRow';
 function App() {
-  const buttonRef = useRef<HTMLDivElement>(null);
+  const buttonRef = React.createRef<HTMLSpanElement>();
   useEffect(() => {
     const button = buttonRef.current;
     if (button) {
@@ -14,7 +15,6 @@ function App() {
     }
   
   }, [])
-  
   return (
     <div className="h-screen bg-black">
      <div className='h-1/2'>
@@ -25,12 +25,7 @@ function App() {
      <div className='h-1/2 p-2 bg-[#c0c0c0] flex items-center'>
      <div className='mx-auto w-3/4  rounded-lg h-3/4 p-4 bg-gray-600'>
       <div className='w-full h-full bg-[#c0c0c0] flex p-2 gap-4'>
-      <span className="w-4 h-4 p-4 flex items-center justify-center text-xs rounded-lg cursor-pointer font-medium key-button" ref={buttonRef}>
-        esc 
-      </span>
-      <span className="w-4 h-4 p-4 flex items-center justify-center text-xs font-extralight rounded-lg cursor-pointer key-button">
-        4
-      </span>
+        <FirstRow ref={buttonRef}/>
       </div>
       </div>
      </div>
